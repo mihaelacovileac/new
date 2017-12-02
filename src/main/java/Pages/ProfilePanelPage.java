@@ -40,6 +40,7 @@ public class ProfilePanelPage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(editProfileBtn)).click();
     }
     public void clickEditCompanyBtn(){
+        executor.executeScript("arguments[0].scrollIntoView(true);",editCompanyBtn);
         wait.until(ExpectedConditions.elementToBeClickable(editCompanyBtn)).click();
     }
     public WebElement getProfilePanelDisplayed() {

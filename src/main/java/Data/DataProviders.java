@@ -42,7 +42,7 @@ public class DataProviders {
     }
     @DataProvider(name = "updateCompanyInfo")
     public static Object[][] updateCompanyInfo(){
-        Object[][] data = new Object[1][12];
+        Object[][] data = new Object[1][10];
         data[0][0] = RandomStringUtils.randomAlphabetic(8).toLowerCase();//company name
         data[0][1] = "United States";//country
         data[0][2]=RandomStringUtils.randomNumeric(3)+" "+RandomStringUtils.randomAlphabetic(5)+ " Str.";//address1
@@ -53,8 +53,7 @@ public class DataProviders {
         data[0][7]=RandomStringUtils.randomNumeric(10);//phone
         data[0][8]=RandomStringUtils.randomAlphabetic(8)+"@cars2.club";//email
         data[0][9]=RandomStringUtils.randomAlphabetic(100).toLowerCase();//notes
-        data[0][10]="buquxahu@cars2.club";
-        data[0][11]="kisulea";
+
         return  data;
     }
 

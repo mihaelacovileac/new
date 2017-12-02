@@ -65,7 +65,8 @@ public class EditProfilePage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(selectPictureBtn)).click();
     }
     public void clickDeletePictureBtn(){
-        wait.until(ExpectedConditions.elementToBeClickable(deletePictureBtn)).click();
+        executor.executeScript("arguments[0].scrollIntoView(true);",deletePictureBtn);
+        deletePictureBtn.click();
     }
     //i have to learn how to upload a picture and add more methods
     public void uploadImage() throws AWTException {
