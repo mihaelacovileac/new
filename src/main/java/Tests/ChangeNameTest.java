@@ -42,6 +42,5 @@ public class ChangeNameTest extends LoginTest {
         String requiredError = editProfilePage.getErrorRequired();
         Assert.assertEquals(requiredError, "This field is required");
         headerPage.clickLogo();
-        
     }
 }

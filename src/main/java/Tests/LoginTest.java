@@ -11,20 +11,12 @@ import static org.testng.Assert.assertTrue;
 public class LoginTest extends BaseTest {
     private LoginPage loginPage;
 
-    @BeforeClass
-    public void loginBeforeClass(){
 
-    }
-    @Test(priority = 0)
-    public void assertLogo(){
-
-        loginPage = new LoginPage(driver);
-        assertTrue(loginPage.getLogo().isDisplayed());}
-
-    @Test(dataProviderClass = DataProviders.class,dataProvider= "usernamePassword", dependsOnMethods = "assertLogo")
+    @Test(dataProviderClass = DataProviders.class,dataProvider= "usernamePassword", priority = 0)
     public void testLogin(String username, String password) throws InterruptedException {
 
         loginPage = new LoginPage(driver);
+        assertTrue(loginPage.getLogo().isDisplayed());
         loginPage.setUsername(username);
         loginPage.setPassword(password);
         loginPage.clickLoginBtn();
