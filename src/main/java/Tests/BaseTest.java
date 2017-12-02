@@ -1,21 +1,16 @@
 package Tests;
 
-import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertTrue;
 
 public class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected LoginPage loginPage;
     private String url;
     @BeforeClass
     public void baseBeforeClass(){
@@ -32,8 +27,5 @@ public class BaseTest {
 
         driver.quit();
     }
-    @Test
-    public void assertLogo(){
-        loginPage = new LoginPage(driver);
-        assertTrue(loginPage.getLogo().isDisplayed());}
+
 }

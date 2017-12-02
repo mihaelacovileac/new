@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertTrue;
+
 public class LoginTest extends BaseTest {
     private LoginPage loginPage;
 
@@ -13,7 +15,13 @@ public class LoginTest extends BaseTest {
     public void loginBeforeClass(){
 
     }
-    @Test(dataProviderClass = DataProviders.class,dataProvider= "usernamePassword")
+    @Test(priority = 0)
+    public void assertLogo(){
+
+        loginPage = new LoginPage(driver);
+        assertTrue(loginPage.getLogo().isDisplayed());}
+
+    @Test(dataProviderClass = DataProviders.class,dataProvider= "usernamePassword", dependsOnMethods = "assertLogo")
     public void testLogin(String username, String password) throws InterruptedException {
 
         loginPage = new LoginPage(driver);
