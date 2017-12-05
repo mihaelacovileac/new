@@ -75,7 +75,7 @@ public class DataProviders {
     }
     @DataProvider(name = "addReportInfo")
     public static Object[][] addReportInfo(){
-        Object[][] data = new Object[1][52];
+        Object[][] data = new Object[1][62];
         data[0][0]= RandomStringUtils.randomNumeric(3);//caseId
         data[0][1]="Suspect";//suspect type
         data[0][2]=RandomStringUtils.randomAlphabetic(7).toLowerCase();//last name
@@ -136,6 +136,21 @@ public class DataProviders {
         data[0][49]="NJ";//employer state
         data[0][50]=RandomStringUtils.randomNumeric(5);//employer Zip
         data[0][51]= RandomStringUtils.randomNumeric(10);//employer phone
+
+        //gang information
+        //,,,,,,
+        data[0][52]=RandomStringUtils.randomAlphabetic(25).toLowerCase();//reasonForStop
+        data[0][53]=RandomStringUtils.randomAlphabetic(8).toLowerCase();//locationOfStop
+        data[0][54]=RandomStringUtils.randomAlphabetic(8).toLowerCase();//dispositionOfStop
+        data[0][55]=RandomStringUtils.randomAlphabetic(5);//gangName
+        data[0][56]=RandomStringUtils.randomNumeric(1)+" years";//howLong
+        data[0][57]=RandomStringUtils.randomAlphabetic(125);//otherInformation
+        data[0][58]= RandomStringUtils.randomAlphabetic(10);//beat
+
+        //vehicle information
+        data[0][59]=RandomStringUtils.randomNumeric(10);//vehicleLicense
+        data[0][60]=RandomStringUtils.randomAlphabetic(15);//vehicleMake
+        data[0][61]= RandomStringUtils.randomAlphabetic(10);//vehicleColor
 
 
 

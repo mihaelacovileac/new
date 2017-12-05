@@ -6,6 +6,10 @@ import Pages.MainNavigationPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class AddReportTest extends LoginTest {
     private MainNavigationPage mainNavigationPage;
     private AddReportPage addReportPage;
@@ -21,7 +25,9 @@ public class AddReportTest extends LoginTest {
                               String otherIdType, String schoolName, String schoolAddress, String schoolCity, String schoolState,
                               String schoolZip, String schoolPhone,String parentName, String parentAddress, String parentCity,
                               String parentState,String parentZip, String parentPhone, String occupation, String employerName, String employerAddress,
-                              String employerCity,String employerState,String employerZip, String employerPhone) throws InterruptedException {
+                              String employerCity,String employerState,String employerZip, String employerPhone, String reasonForStop,String locationOfStop,
+                              String dispositionOfStop,String gangName, String howLong,String otherInformation,String beat,
+                              String vehicleLicense,String vehicleMake,String vehicleColor) throws InterruptedException, AWTException {
         mainNavigationPage=new MainNavigationPage(driver);
         mainNavigationPage.clickAddReportLink();
         //click on add report link
@@ -105,17 +111,39 @@ public class AddReportTest extends LoginTest {
         addReportPage.clickNextBtn4();
         String title5 = addReportPage.getDistributionTitle();//move to next tab
         Assert.assertEquals(title5, "Gang Membership");
-
-        //in progress
-
-
-        /*
+        addReportPage.clickDistributionCheckboxes();
+        addReportPage.setReasonForStop(reasonForStop);
+        addReportPage.setlocationOfStop(locationOfStop);
+        addReportPage.setdispositionOfStop(dispositionOfStop);
+        addReportPage.setgangName(gangName);
+        addReportPage.sethowLong(howLong);
+        addReportPage.clickGangCriteriaCheckboxes();
+        addReportPage.setOtherInformation(otherInformation);
+        addReportPage.setBeat(beat);
+        addReportPage.clickNextBtn5();
         String title6 = addReportPage.getVehicleTitle();
         Assert.assertEquals(title6, "Vehicle");
+        //vehicle information
+        addReportPage.setvehicleLicense(vehicleLicense);
+        addReportPage.setvehicleMake(vehicleMake);
+        addReportPage.setvehicleColor(vehicleColor);
+        addReportPage.clickNextBtn6();
         String title7 = addReportPage.getPhotosTitle();
         Assert.assertEquals(title7, "Photos");
+
+        //add picture to report
+        addReportPage.uploadImage();
+        addReportPage.clickNextBtn7();
+
         String title8 = addReportPage.getReviewInfo();
         Assert.assertEquals(title8, "Preview");
-        */
+        addReportPage.clickPublishReportBtn();
+
+        Pattern pattern = Pattern.compile(lastName);
+        Matcher matcher = pattern.matcher(addReportPage.getAssertReportPosted());
+        System.out.println("My string: " +addReportPage.getAssertReportPosted());
+        System.out.println("Pattern i'm looking for (lastName and caseId): " +lastName+ ","+ caseId);
+        //assert that report with last name x is published and visible on search report page
+        Assert.assertTrue(matcher.find());
     }
 }

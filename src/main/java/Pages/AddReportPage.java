@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,10 @@ import org.openqa.selenium.support.ui.Select;
 
 //import java.time.LocalDate;
 //import java.time.Period;
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.List;
 public class AddReportPage extends BasePage {
@@ -45,6 +50,12 @@ public class AddReportPage extends BasePage {
     private WebElement nextBtn3;
     @FindBy(xpath = "(//a[text()='Next'])[4]")
     private WebElement nextBtn4;
+    @FindBy(xpath = "(//a[text()='Next'])[5]")
+    private WebElement nextBtn5;
+    @FindBy(xpath = "(//a[text()='Next'])[6]")
+    private WebElement nextBtn6;
+    @FindBy(xpath = "(//a[text()='Next'])[7]")
+    private WebElement nextBtn7;
 
     //subject information
     @FindBy(xpath = "//input[@name='caseNumber']")
@@ -173,6 +184,57 @@ public class AddReportPage extends BasePage {
     private WebElement;
     */
 
+    //gang membership page
+    @FindBy(xpath = "(//span[contains(@class,'fa fa-check')])[18]" )
+    private WebElement distributionCheckboxes;// distribution checkboxes 8-12 index
+    //stop information
+    @FindBy(xpath = "//input[@name='reasonForStop']")
+    private WebElement reasonForStop;// reason for stop
+    @FindBy(xpath = "//input[@name='locationOfStop']")
+    private WebElement locationOfStop;
+    @FindBy(xpath = "//input[@name='dispositionOfStop']")
+    private WebElement dispositionOfStop;
+    //gang membership criteria
+    @FindBy(xpath = "//input[@name='gang-name']")
+    private WebElement gangName;
+    @FindBy(xpath = "//input[@name='howLong']")
+    private WebElement howLong;
+    @FindBy(xpath = "(//span[contains(@class,'fa fa-check')])[14]")
+    private WebElement checkboxesGangCriteria;//Select a minimum of two from below to validate 14-22 check box
+    //23-24 on parole on probation
+    //other information
+    @FindBy(xpath = "//textarea[@name='other-information']")
+    private WebElement otherInformation;
+    @FindBy(xpath = "//input[@name='beat']")
+    private WebElement beat;
+
+    //vehicle information
+    @FindBy(xpath = "//input[@name='vehicleLicense']")
+    private WebElement vehicleLicense;
+    @FindBy(xpath = "//input[@name='vehicleMake']")
+    private WebElement vehicleMake;
+    @FindBy(xpath = "//input[@name='vehicleColor']")
+    private WebElement vehicleColor;
+
+    //add picture
+    @FindBy(xpath = "//button[@ng-disabled='picker.photos.length >= picker.limit || picker.isUploading']")
+    private WebElement selectPictureBtn;
+    //preview report and submit
+    @FindBy(xpath = "//button[@ng-click='wizard.commitReport()']")
+    private WebElement publishReportBtn;
+
+    //find this report
+    @FindBy(xpath = "(//h4[@class='ng-binding'])[2]")
+    private WebElement assertReportPosted;
+
+    public String getAssertReportPosted() {
+        return assertReportPosted.getText();
+    }
+
+
+
+
+
 
 
 
@@ -232,6 +294,18 @@ public class AddReportPage extends BasePage {
     public void clickNextBtn4(){
         executor.executeScript("arguments[0].scrollIntoView(true);",nextBtn4);
         executor.executeScript("arguments[0].click();",nextBtn4);
+    }
+    public void clickNextBtn5(){
+        executor.executeScript("arguments[0].scrollIntoView(true);",nextBtn5);
+        executor.executeScript("arguments[0].click();",nextBtn5);
+    }
+    public void clickNextBtn6(){
+        executor.executeScript("arguments[0].scrollIntoView(true);",nextBtn6);
+        executor.executeScript("arguments[0].click();",nextBtn6);
+    }
+    public void clickNextBtn7(){
+        executor.executeScript("arguments[0].scrollIntoView(true);",nextBtn7);
+        executor.executeScript("arguments[0].click();",nextBtn7);
     }
 
     //methods for adding information about suspect
@@ -476,4 +550,99 @@ public class AddReportPage extends BasePage {
     public void setEmployerPhone(String strEmployerPhone){
         wait.until(ExpectedConditions.visibilityOf(employerPhone)).sendKeys(strEmployerPhone);
     }
+
+    public void clickDistributionCheckboxes(){
+        for (int i=8; i<25; i++) {
+            if (i == 13) {
+                break;
+            }
+            try {
+                driver.findElement(By.xpath("(//span[contains(@class,'fa fa-check')])[" + i + "]")).click();
+            } catch (Exception e) {
+                executor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("(//span[contains(@class,'fa fa-check')])[" + i + "]")));
+                driver.findElement(By.xpath("(//span[contains(@class,'fa fa-check')])[" + i + "]")).click();
+            }
+        }
+    }
+
+    public void setReasonForStop(String strReasonForStop){
+        executor.executeScript("arguments[0].scrollIntoView(true);",reasonForStop);
+        wait.until(ExpectedConditions.visibilityOf(reasonForStop)).sendKeys(strReasonForStop);
+    }
+    public void setlocationOfStop(String strlocationOfStop){
+        executor.executeScript("arguments[0].scrollIntoView(true);",locationOfStop);
+        wait.until(ExpectedConditions.visibilityOf(locationOfStop)).sendKeys(strlocationOfStop);
+    }
+    public void setdispositionOfStop(String strdispositionOfStop){
+        executor.executeScript("arguments[0].scrollIntoView(true);",dispositionOfStop);
+        wait.until(ExpectedConditions.visibilityOf(dispositionOfStop)).sendKeys(strdispositionOfStop);
+    }
+    public void setgangName(String strgangName){
+        executor.executeScript("arguments[0].scrollIntoView(true);",gangName);
+        wait.until(ExpectedConditions.visibilityOf(gangName)).sendKeys(strgangName);
+    }
+    public void sethowLong(String strhowLong){
+        executor.executeScript("arguments[0].scrollIntoView(true);",howLong);
+        wait.until(ExpectedConditions.visibilityOf(howLong)).sendKeys(strhowLong);
+    }
+
+    public void clickGangCriteriaCheckboxes(){
+        for (int i=14; i<23; i++) {
+            try {
+                driver.findElement(By.xpath("(//span[contains(@class,'fa fa-check')])[" + i + "]")).click();
+            } catch (Exception e) {
+                executor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("(//span[contains(@class,'fa fa-check')])[" + i + "]")));
+                driver.findElement(By.xpath("(//span[contains(@class,'fa fa-check')])[" + i + "]")).click();
+            }
+        }
+    }
+    //other information
+    public void setOtherInformation(String strOtherInformation){
+        executor.executeScript("arguments[0].scrollIntoView(true);",otherInformation);
+        wait.until(ExpectedConditions.visibilityOf(otherInformation)).sendKeys(strOtherInformation);
+    }
+    public void setBeat(String strbeat){
+        executor.executeScript("arguments[0].scrollIntoView(true);",beat);
+        wait.until(ExpectedConditions.visibilityOf(beat)).sendKeys(strbeat);
+    }
+
+    //vehicle information
+    public void setvehicleLicense(String strvehicleLicense){
+        wait.until(ExpectedConditions.visibilityOf(vehicleLicense)).sendKeys(strvehicleLicense);
+    }
+    public void setvehicleMake(String strvehicleMake){
+        wait.until(ExpectedConditions.visibilityOf(vehicleMake)).sendKeys(strvehicleMake);
+    }
+    public void setvehicleColor(String strvehicleColor){
+        wait.until(ExpectedConditions.visibilityOf(vehicleColor)).sendKeys(strvehicleColor);
+    }
+
+    //add a picture to report
+    public void uploadImage() throws AWTException {
+
+        wait.until(ExpectedConditions.elementToBeClickable(selectPictureBtn));
+        executor.executeScript("arguments[0].click()", selectPictureBtn);
+
+        String text = "sky.jpg";
+
+        StringSelection selection = new StringSelection(text);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(selection, selection);
+
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.delay(2500);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
+    }
+
+    public void clickPublishReportBtn(){
+        executor.executeScript("arguments[0].scrollIntoView(true);",publishReportBtn);
+        wait.until(ExpectedConditions.visibilityOf(publishReportBtn)).click();
+    }
+
 }

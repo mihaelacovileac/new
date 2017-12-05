@@ -1,0 +1,16 @@
+firstTestsLogin.class
+Pages\MainNavigationPage.class
+Pages\HeaderPage.class
+Pages\EditProfilePage.class
+Tests\ChangeNameTest.class
+Pages\PaypalPage.class
+Pages\ProfilePanelPage.class
+Pages\EntitiesPage.class
+Pages\SubscriptionsPage.class
+Pages\LoginPage.class
+Pages\EditCompanyPage.class
+Pages\AddReportPage.class
+Pages\BasePage.class
+Tests\LoginTest.class
+Tests\BaseTest.class
+Data\DataProviders.class
