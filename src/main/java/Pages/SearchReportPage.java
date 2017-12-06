@@ -20,12 +20,18 @@ public class SearchReportPage extends BasePage {
     private WebElement publishedCheckBox;
     @FindBy(xpath = "//input[@is-open='openedSearchFrom']")
     private WebElement openedSearchFrom;
+    @FindBy(xpath = "//*[@id='datepicker-679-936-7']/button/span")
+    private WebElement clickOnDate;
     @FindBy(xpath = "//input[@ng-model='ctSearchKey']")
     private WebElement ctSearchKey;
     @FindBy(xpath = "//a[@class='btn btn-info btn-sm mt-sm ng-scope' and @title= 'View']")
     private WebElement clickView;
     @FindBy(xpath = ".//*[@id='reportBody']/div[1]/div/div[2]/div[1]/div")
     private WebElement validateLastName;
+    @FindBy(xpath = ".//*[@id='reportBody']/div[1]/div/div[1]/div[1]/div")
+    private WebElement validateCaseId;
+    @FindBy(xpath = ".//*[@id='reportBody']/div[11]/div/div/div")
+    private  WebElement validateTextContent;
 
     /*
     @FindBy(xpath = "")
@@ -34,6 +40,13 @@ public class SearchReportPage extends BasePage {
 
     public String getValidateLastName() {
         return validateLastName.getText();
+    }
+    public String getValidateCaseId() {
+        return validateCaseId.getText();
+    }
+    public String getValidateTextContent() {
+        executor.executeScript("arguments[0].scrollIntoView(true);",validateTextContent);
+        return validateTextContent.getText();
     }
 
     public void setLnSearchKey(String strLnSearchKey) {
@@ -45,8 +58,10 @@ public class SearchReportPage extends BasePage {
     public void setCiSearchKey(String strCiSearchKey) {
         ciSearchKey.sendKeys(strCiSearchKey);
     }
-    public void setOpenedSearchFrom(String strOpenedSearchFrom) {
-        openedSearchFrom.sendKeys(strOpenedSearchFrom);
+    public void setOpenedSearchFrom() {
+        openedSearchFrom.click();
+        driver.switchTo().activeElement();
+        executor.executeScript("arguents[0].click()",clickOnDate);
     }
     public void setCtSearchKey(String strCtSearchKey) {
         ctSearchKey.sendKeys(strCtSearchKey);
@@ -55,7 +70,7 @@ public class SearchReportPage extends BasePage {
     public void setStSearchKey(String status){
         Select s =new Select(stSearchKey);
         s.selectByValue(status);}
-    public void setClickView(){wait.until(ExpectedConditions.visibilityOf(clickView));
+    public void clickView(){wait.until(ExpectedConditions.visibilityOf(clickView));
     executor.executeScript("arguments[0].scrollIntoView(true);",clickView);
     clickView.click();}
 

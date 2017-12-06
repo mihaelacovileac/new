@@ -34,7 +34,7 @@ public class BaseTest {
     @AfterClass
     public void baseAfterClass(){
 
-//        driver.quit();
+        driver.quit();
     }
 
 }

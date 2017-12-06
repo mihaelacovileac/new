@@ -217,7 +217,9 @@ public class AddReportPage extends BasePage {
     private WebElement vehicleColor;
 
     //add picture
-    @FindBy(xpath = "//button[@ng-disabled='picker.photos.length >= picker.limit || picker.isUploading']")
+    @FindBy(xpath = "html/body/div[2]/section/div/div/form/div[1]/div[2]/div[8]/fieldset/div/div[2]/div/div/button")
+    //html/body/div[2]/section/div/div/form/div[1]/div[2]/div[8]/fieldset/div/div[2]/div/div/button
+    //"//button[@ng-disabled='picker.photos.length >= picker.limit || picker.isUploading']"
     private WebElement selectPictureBtn;
     //preview report and submit
     @FindBy(xpath = "//button[@ng-click='wizard.commitReport()']")
