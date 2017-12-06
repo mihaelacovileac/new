@@ -231,14 +231,6 @@ public class AddReportPage extends BasePage {
         return assertReportPosted.getText();
     }
 
-
-
-
-
-
-
-
-
     //for assertion the correct pages
     public String getHeaderText() {
         return headerText.getText();
