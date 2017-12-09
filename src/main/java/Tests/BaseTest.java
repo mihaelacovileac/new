@@ -3,6 +3,7 @@ package Tests;
 import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
@@ -18,15 +19,14 @@ public class BaseTest {
     private String url;
     @BeforeClass
     public void baseBeforeClass(){
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         url = "http://fits.qauber.com/#/page/login";
         //driver.manage().window().maximize();
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
-
     }
-    @Test(priority = 0, enabled = false)
+    @Test(priority = 0, enabled = true)
     public void assertLogo(){
 
         loginPage = new LoginPage(driver);

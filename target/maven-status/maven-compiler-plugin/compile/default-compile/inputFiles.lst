@@ -3,8 +3,10 @@ C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\HeaderPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\firstTestsLogin.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\AddReportPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\ChangeNameTest.java
+C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\SearchReportTest.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\LoginPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\ProfilePanelPage.java
+C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\SearchReportPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\TestChangeSubscription.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\ChangePasswordTest.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\AddEntityTest.java
@@ -12,6 +14,8 @@ C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\SubscriptionsPage.j
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\EditCompanyPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\EntitiesPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\UpdateCompanyInfoTest.java
+C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\TestAppium.java
+C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\cucumberTest\stepDefinition\Test_Steps.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\BaseTest.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\MainNavigationPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\EditProfilePage.java
@@ -19,7 +23,9 @@ C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\PaypalPage.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\AddReportTest.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\LoginTest.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\ProfileImageTest.java
+C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\cucumberTest\TestRunner.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Pages\BasePage.java
+C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Log4JTest.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\TestOpenProfilePanel.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Data\DataProviders.java
 C:\Users\mcovi\IdeaProjects\learnJenkins\src\main\java\Tests\SignOutTest.java
