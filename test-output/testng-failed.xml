@@ -3,13 +3,13 @@
 <suite name="Failed suite [Command line suite]">
   <test name="Command line test(failed)">
     <classes>
-      <class name="Tests.BaseTest">
+      <class name="testsWithTestNG.BaseTest">
         <methods>
           <include name="assertLogo"/>
           <include name="baseBeforeClass"/>
           <include name="baseAfterClass"/>
         </methods>
-      </class> <!-- Tests.BaseTest -->
+      </class> <!-- testsWithTestNG.BaseTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

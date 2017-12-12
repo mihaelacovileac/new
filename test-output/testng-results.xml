@@ -6,8 +6,8 @@
     <groups>
     </groups>
     <test name="Command line test" duration-ms="786" started-at="2017-12-07T19:38:53Z" finished-at="2017-12-07T19:38:54Z">
-      <class name="Tests.BaseTest">
-        <test-method status="FAIL" signature="baseBeforeClass()[pri:0, instance:Tests.BaseTest@1a297837]" name="baseBeforeClass" is-config="true" duration-ms="755" started-at="2017-12-07T11:38:53Z" finished-at="2017-12-07T11:38:54Z">
+      <class name="testsWithTestNG.BaseTest">
+        <test-method status="FAIL" signature="baseBeforeClass()[pri:0, instance:testsWithTestNG.BaseTest@1a297837]" name="baseBeforeClass" is-config="true" duration-ms="755" started-at="2017-12-07T11:38:53Z" finished-at="2017-12-07T11:38:54Z">
           <exception class="java.lang.NoSuchMethodError">
             <message>
               <![CDATA[com.google.common.util.concurrent.SimpleTimeLimiter.create(Ljava/util/concurrent/ExecutorService;)Lcom/google/common/util/concurrent/SimpleTimeLimiter;]]>
@@ -24,7 +24,7 @@
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
-	at Tests.BaseTest.baseBeforeClass(BaseTest.java:21)
+	at testsWithTestNG.BaseTest.baseBeforeClass(BaseTest.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -61,7 +61,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- baseBeforeClass -->
-        <test-method status="SKIP" signature="assertLogo()[pri:0, instance:Tests.BaseTest@1a297837]" name="assertLogo" duration-ms="0" started-at="2017-12-07T11:38:54Z" finished-at="2017-12-07T11:38:54Z">
+        <test-method status="SKIP" signature="assertLogo()[pri:0, instance:testsWithTestNG.BaseTest@1a297837]" name="assertLogo" duration-ms="0" started-at="2017-12-07T11:38:54Z" finished-at="2017-12-07T11:38:54Z">
           <exception class="java.lang.NoSuchMethodError">
             <message>
               <![CDATA[com.google.common.util.concurrent.SimpleTimeLimiter.create(Ljava/util/concurrent/ExecutorService;)Lcom/google/common/util/concurrent/SimpleTimeLimiter;]]>
@@ -78,7 +78,7 @@
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:181)
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:168)
 	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:123)
-	at Tests.BaseTest.baseBeforeClass(BaseTest.java:21)
+	at testsWithTestNG.BaseTest.baseBeforeClass(BaseTest.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -115,11 +115,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertLogo -->
-        <test-method status="SKIP" signature="baseAfterClass()[pri:0, instance:Tests.BaseTest@1a297837]" name="baseAfterClass" is-config="true" duration-ms="0" started-at="2017-12-07T11:38:54Z" finished-at="2017-12-07T11:38:54Z">
+        <test-method status="SKIP" signature="baseAfterClass()[pri:0, instance:testsWithTestNG.BaseTest@1a297837]" name="baseAfterClass" is-config="true" duration-ms="0" started-at="2017-12-07T11:38:54Z" finished-at="2017-12-07T11:38:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- baseAfterClass -->
-      </class> <!-- Tests.BaseTest -->
+      </class> <!-- testsWithTestNG.BaseTest -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>
