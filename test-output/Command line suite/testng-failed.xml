@@ -2,14 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Command line suite]">
   <test name="Command line test(failed)">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
     <classes>
-      <class name="testsWithTestNG.BaseTest">
+      <class name="testsWithTestNG.ChangeNameTest">
         <methods>
+          <include name="baseAfterClass"/>
           <include name="assertLogo"/>
           <include name="baseBeforeClass"/>
-          <include name="baseAfterClass"/>
         </methods>
-      </class> <!-- testsWithTestNG.BaseTest -->
+      </class> <!-- testsWithTestNG.ChangeNameTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

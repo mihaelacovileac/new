@@ -11,12 +11,12 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 public class ChromeDriverDownloadTest {
 
-    //This is just an example
+    //This is just an ExampleDownloadReport
     //Chrome is deprecated and doesn't work
 
         public static void main(String[] args) throws InterruptedException {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\mcovi\\OneDrive\\Documente\\drivers\\chromedriver.exe");
-            String downloadPath = "C:\\Users\\mcovi\\OneDrive\\QAuber\\bootcamp";
+            System.setProperty("webdriver.chrome.driver", "C:/Users/mcovi/OneDrive/Documente/drivers/chromedriver.exe");
+            String downloadPath = "C:/Users/mcovi/OneDrive/QAuber/bootcamp";
 
             HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
             chromePrefs.put("profile.default_content_settings.popups", 0);
@@ -29,7 +29,7 @@ public class ChromeDriverDownloadTest {
 
             HashMap<String, Object> chromeOptionsMap = new HashMap<String, Object>();
 
-            File f = new File("C:\\Users\\mcovi\\OneDrive\\QAuber\\bootcamp\\SampleXLSFile_19kb.xls");
+            File f = new File("C:/Users/mcovi/OneDrive/QAuber/bootcamp/SampleXLSFile_19kb.xls");
             f.delete();
 
             DesiredCapabilities cap = DesiredCapabilities.chrome();

@@ -15,7 +15,7 @@ Feature: Wave Project tests with cucumber
     And Type name into Name textInput field
     And Click update Button
     Then Successful message is displayed
-
+"""
   Scenario:Update company information
     Given User is logged into application
     When Type all required fields
@@ -28,7 +28,7 @@ Feature: Wave Project tests with cucumber
     Then Successful paymant message is displayed
     Examples:
       | name      | country | address1     | city  | state | zip   | phone      | email           | RUemail          | AUemail        |
-      | Entity981 | US      | 123 easy rd. | Tampa | NJ    | 56787 | 8789878988 | cosmo@gmail.com | seccer@gmail.com | Cuma@gmail.com |
+      | Entity81 | US      | 123 easy rd. | Tampa | NJ    | 56787 | 8789878988 | cosmo@gmail.com | seccer@gmail.com | Cuma@gmail.com |
 
   Scenario Outline:Change password
     Given User is logged into application
@@ -59,9 +59,9 @@ Feature: Wave Project tests with cucumber
     Examples:
     #Paramethers for AddReport test
       | caseId | suspectType | lastName | firstName | middleName | nickname | dob      | sex | race    | height | weight | hairColor | hairLength | hairStyle | eyeColor | complexion | teeth   | handPreference | language | streetAddress | country | city  | state | zip   | phone      | email                 | ssn       | driverLicenseN    | idState | otherId  | otherCountry | otherIdState | otherIdType | schoolName | schoolAddress | schoolCity | schoolState | schoolZip | schoolPhone | parentName | parentAddress | parentCity | parentState | parentZip | parentPhone | occupation | employerName | employerAddress | employerCity | employerState | employerZip | employerPhone | reasonForStop | locationOfStop | dispositionOfStop | gangName  | howLong | otherInformation | beat            | vehicleLicense | vehicleMake | vehicleColor |
-      | 199    | Suspect     | Christea | Marina    | I          | Mary     | 04271992 | F   | Unknown | 504    | 1000   | BLO       | Short      | Afro      | BLU      | Medium     | Missing | Right          | English  | 123 Main St.  | US      | Tampa | NJ    | 67878 | 6787877877 | marinaEmail@yahoo.com | 123456789 | F255-921-50-094-1 | CA      | RO 12356 | RO           | Kazak        | Passport    | Univers    | 123 mana Rd   | Kana       | CA          | 56776     | 8798879877  | Iurii      | 123 JHGJF St. | dhfahfj    | CA          | 89878     | 67876787666 | Teacher    | Engineer     | 345 main St.    | lara         | NJ            | 87898       | 78987899887   | drank         | Streat         | hdfjhgkj          | hfjhkdfhk | 5 years | hjhjghf          | hfdhgoiahdoijgo | dkjhkj45       | lada        | green        |
+      | 19    | Suspect     | Christea | Marina    | I          | Mary     | 04271992 | F   | Unknown | 504    | 1000   | BLO       | Short      | Afro      | BLU      | Medium     | Missing | Right          | English  | 123 Main St.  | US      | Tampa | NJ    | 67878 | 6787877877 | marinaEmail@yahoo.com | 123456789 | F255-921-50-094-1 | CA      | RO 12356 | RO           | Kazak        | Passport    | Univers    | 123 mana Rd   | Kana       | CA          | 56776     | 8798879877  | Iurii      | 123 JHGJF St. | dhfahfj    | CA          | 89878     | 67876787666 | Teacher    | Engineer     | 345 main St.    | lara         | NJ            | 87898       | 78987899887   | drank         | Streat         | hdfjhgkj          | hfjhkdfhk | 5 years | hjhjghf          | hfdhgoiahdoijgo | dkjhkj45       | lada        | green        |
 
-
+"""
 
 
 
