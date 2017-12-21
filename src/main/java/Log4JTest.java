@@ -6,7 +6,7 @@ public class Log4JTest {
     public static void main(String[] args) {
 
         Log4JTest obj = new Log4JTest();
-        obj.runMe("test");
+        obj.runMe("ConectionToMySQL");
 
     }
 

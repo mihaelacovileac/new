@@ -1,15 +1,15 @@
 package testDataBase;
 
-        import java.net.URL;
-        import java.sql.*;
+import java.net.URL;
+import java.sql.*;
 
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.WebDriver;
-        import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.remote.DesiredCapabilities;
-        import org.openqa.selenium.remote.RemoteWebDriver;
-        import org.testng.annotations.DataProvider;
-        import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class BrowserStackMultiBrowserWindowsTests {
     public static final String USERNAME = "millania1";
@@ -38,8 +38,10 @@ public class BrowserStackMultiBrowserWindowsTests {
     }
 
     @DataProvider
-    public Object[][] givePlatformAndBrowsers() throws SQLException, ClassNotFoundException {
-        Object[][] giveBrowserstackPlatforms = new Object[1][3];
+    public Object[][] givePlatformAndBrowsers() throws Exception {
+        int j = num();
+        System.out.println(j);
+        Object[][] giveBrowserstackPlatforms = new Object[j][3];
         //Connection URL Syntax: "jdbc:mysql://ipaddress:portnumber/db_name"
         String dbUrl = "jdbc:mysql://localhost:3306/mysql";
 
@@ -51,7 +53,7 @@ public class BrowserStackMultiBrowserWindowsTests {
         String password = "";
 
         //Query to Execute
-        String query = "select *  from test;";
+        String query = "select * from ConectionToMySQL;";
 
         //Load mysql jdbc driver
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -62,8 +64,9 @@ public class BrowserStackMultiBrowserWindowsTests {
         Statement stmt = con.createStatement();
 
         // Execute the SQL Query. Store results in ResultSet
-        ResultSet rs = stmt.executeQuery(query);
 
+        ResultSet rs = stmt.executeQuery(query);
+        int counter = 0;
         // While Loop to iterate through all data and print results
         while (rs.next()) {
             String browser = rs.getString(1);
@@ -73,21 +76,57 @@ public class BrowserStackMultiBrowserWindowsTests {
             System.out.println(version);
             System.out.println(platform);
 
-            giveBrowserstackPlatforms[0][0] = browser;
-            giveBrowserstackPlatforms[0][1] = version;
-            giveBrowserstackPlatforms[0][2] = platform;
-
-//            giveBrowserstackPlatforms[1][0] = browser;
-//            giveBrowserstackPlatforms[1][1] = version;
-//            giveBrowserstackPlatforms[1][2] = platform;
-
-
+            giveBrowserstackPlatforms[counter][0] = browser;
+            giveBrowserstackPlatforms[counter][1] = version;
+            giveBrowserstackPlatforms[counter][2] = platform;
+            counter++;
 
         }
-        // closing DB Connection
+//        // closing DB Connection
         con.close();
 
         return giveBrowserstackPlatforms;
+
+
     }
 
+    public int num() throws Exception {
+        int j = 0;
+        //Connection URL Syntax: "jdbc:mysql://ipaddress:portnumber/db_name"
+        String dbUrl = "jdbc:mysql://localhost:3306/mysql";
+
+
+        //Database Username
+        String username = "root";
+
+        //Database Password
+        String password = "";
+
+        //Query to Execute
+        String query = "select count(*) from ConectionToMySQL;";
+
+        //Load mysql jdbc driver
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        //Create Connection to DB
+        Connection con = DriverManager.getConnection(dbUrl, username, password);
+        //Create Statement Object
+        Statement stmt = con.createStatement();
+
+        // Execute the SQL Query. Store results in ResultSet
+
+        ResultSet rs = stmt.executeQuery(query);
+        int counter = 0;
+        // While Loop to iterate through all data and print results
+        while (rs.next()) {
+            j = rs.getInt(1);
+
+        }
+
+        con.close();
+
+        return j;
+
+
+    }
 }

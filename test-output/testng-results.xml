@@ -126,6 +126,6 @@ Session ID: 9b112d68-0c2a-4ef9-a550-acfbf6136895
           </reporter-output>
         </test-method> <!-- baseAfterClass -->
       </class> <!-- testsWithTestNG.ChangeNameTest -->
-    </test> <!-- Command line test -->
+    </test> <!-- Command line ConectionToMySQL -->
   </suite> <!-- Command line suite -->
 </testng-results>

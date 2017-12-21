@@ -35,6 +35,7 @@ pages\SearchReportPage.class
 testMobileDevices\TestLiveiApp.class
 testsWithTestNG\LoginTest.class
 testsWithTestNG\SearchReportTest.class
+testDataBase\test.class
 downloadFiles\ChromeDriverDownloadTest.class
 downloadFiles\ExampleDownloadReport.class
 pages\SubscriptionsPage.class

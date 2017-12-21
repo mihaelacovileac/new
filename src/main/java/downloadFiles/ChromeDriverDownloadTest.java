@@ -23,7 +23,7 @@ public class ChromeDriverDownloadTest {
             chromePrefs.put("download.default_directory", downloadPath);
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", chromePrefs);
-            options.addArguments("--test-type");
+            options.addArguments("--ConectionToMySQL-type");
             options.addArguments("--disable-extensions"); // to disable browser
             // extension popup
 
